@@ -54,7 +54,7 @@ class GoNoGoAssesmentController extends Controller
         return response([
             'error' => False,
             'message' => 'Success',
-            'apigonogoAssesments' => $gonogoAssesments
+            'gonogoAssesments' => $gonogoAssesments
         ], Response::HTTP_OK);
 
     }
