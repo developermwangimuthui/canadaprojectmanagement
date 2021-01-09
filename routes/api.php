@@ -7,6 +7,7 @@ use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectPursuitSummaryController;
 use App\Http\Controllers\GoNoGoAssesmentController;
+use App\Http\Controllers\ProjectLessonLearntSummaryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,6 +39,12 @@ Route::group(['middleware' => ['auth:api']], function () {
 
     Route::get('gonogoassesment/index',[GoNoGoAssesmentController::class,'index']);
     Route::post('gonogoassesment/store',[GoNoGoAssesmentController::class,'store']);
+
+    //...................projectlessonlearntsummary.............//
+
+    Route::get('projectlessonlearntsummary/index',[ProjectLessonLearntSummaryController::class,'index']);
+    Route::post('projectlessonlearntsummary/store',[ProjectLessonLearntSummaryController::class,'store']);
+
 
 
 });
