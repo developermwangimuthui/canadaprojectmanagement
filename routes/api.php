@@ -8,6 +8,12 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectPursuitSummaryController;
 use App\Http\Controllers\GoNoGoAssesmentController;
 use App\Http\Controllers\ProjectLessonLearntSummaryController;
+use App\Http\Controllers\ScheduleHourlyRateController;
+use App\Http\Controllers\ProjectComplexityEvaluationController;
+use App\Http\Controllers\ProjectParticipantsController;
+use App\Http\Controllers\ProjectStagesController;
+use App\Http\Controllers\ScopeWorkDescriptionController;
+use App\Http\Controllers\WorkBreakdownStructureController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -44,6 +50,32 @@ Route::group(['middleware' => ['auth:api']], function () {
 
     Route::get('projectlessonlearntsummary/index',[ProjectLessonLearntSummaryController::class,'index']);
     Route::post('projectlessonlearntsummary/store',[ProjectLessonLearntSummaryController::class,'store']);
+
+    //...................schedulehourlyrate.............//
+
+    Route::get('schedulehourlyrate/index',[ScheduleHourlyRateController::class,'index']);
+    Route::post('schedulehourlyrate/store',[ScheduleHourlyRateController::class,'store']);
+
+    //...................projectcomplexityevaluation.............//
+    Route::get('projectcomplexityevaluation/index',[ProjectComplexityEvaluationController::class,'index']);
+    Route::post('projectcomplexityevaluation/store',[ProjectComplexityEvaluationController::class,'store']);
+
+    //...................projectcomplexityevaluation.............//
+    Route::get('projectParticipants/index',[ProjectParticipantsController::class,'index']);
+    Route::post('projectParticipants/store',[ProjectParticipantsController::class,'store']);
+
+
+    //...................projectStages.............//
+    Route::get('projectStages/index',[ProjectStagesController::class,'index']);
+    Route::post('projectStages/store',[ProjectStagesController::class,'store']);
+
+    //...................scopeworkdescription.............//
+    Route::get('scopeworkdescription/index',[ScopeWorkDescriptionController::class,'index']);
+    Route::post('scopeworkdescription/store',[ScopeWorkDescriptionController::class,'store']);
+
+    //...................workbreakdownStructure.............//
+    Route::get('workbreakdownStructure/index',[WorkBreakdownStructureController::class,'index']);
+    Route::post('workbreakdownStructure/store',[WorkBreakdownStructureController::class,'store']);
 
 
 
