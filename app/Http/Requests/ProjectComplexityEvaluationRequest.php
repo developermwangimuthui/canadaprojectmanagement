@@ -26,6 +26,7 @@ class ProjectComplexityEvaluationRequest extends FormRequest
     {
         return [
             'project_id' => 'required|integer',
+            'type' => 'required|string',
             'description' => 'required|string',
             'complexity_rating' => 'required|integer',
         ];

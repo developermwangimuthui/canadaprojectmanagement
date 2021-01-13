@@ -16,6 +16,7 @@ class CreateProjectComplexityEvaluationsTable extends Migration
         Schema::create('project_complexity_evaluations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('project_id');
+            $table->string('type');
             $table->string('description');
             $table->integer('complexity_rating');
             $table->softDeletes();

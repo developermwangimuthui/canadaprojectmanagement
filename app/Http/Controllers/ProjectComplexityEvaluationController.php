@@ -26,6 +26,7 @@ class ProjectComplexityEvaluationController extends Controller
     {
         $projectComplexityEvaluation = new ProjectComplexityEvaluation();
         $projectComplexityEvaluation ->project_id  = $request->input('project_id');
+        $projectComplexityEvaluation ->type = $request->input('type');
         $projectComplexityEvaluation ->description = $request->input('description');
         $projectComplexityEvaluation ->complexity_rating = $request->input('complexity_rating');
         $projectComplexityEvaluation ->save();

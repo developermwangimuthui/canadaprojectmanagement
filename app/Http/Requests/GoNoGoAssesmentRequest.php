@@ -26,24 +26,8 @@ class GoNoGoAssesmentRequest extends FormRequest
     {
         return [
             'project_id' => 'required|integer',
-            'relationship_establishment' => 'required|integer',
-            'wtdr' => 'required|integer',
-            'piwc' => 'required|integer',
-            'aosrtbc' => 'required|integer',
-            'profit_expectation' => 'required|integer',
-            'secfp' => 'required|integer',
-            'track_record' => 'required|integer',
-            'rtcp' => 'required|integer',
-            'iwc' => 'required|integer',
-            'biioc' => 'required|integer',
-            'aoitb' => 'required|integer',
-            'ratpp' => 'required|integer',
-            'loc' => 'required|integer',
-            'pos' => 'required|integer',
-            'awcv' => 'required|integer',
-            'ptgpp' => 'required|integer',
-            'project_risks' => 'required|integer',
-            'ateltr' => 'required|integer',
+            'question' => 'required|string',
+            'rating' => 'required|integer',
             'comments' => 'required|string',
         ];
     }
