@@ -21,6 +21,22 @@ class ProjectController extends Controller
         ], Response::HTTP_OK);
     }
 
+    public function singleProject($id)
+    {
+        $p = Project::where('id', $id)->first();
+        if (!$p) {
+            return response([
+                'error' => true,
+                'message' => 'Project does not exist'
+            ], Response::HTTP_OK);
+        }
+        return response([
+            'error' => False,
+            'message' => 'Success',
+            'project' => $p
+        ], Response::HTTP_OK);
+    }
+
     public function store(ProjectRequest $request)
     {
         $project = new Project();
@@ -32,13 +48,12 @@ class ProjectController extends Controller
         $project->save();
         $id = $project->id;
 
-        $allProjects = Project::where('id',$id)->get();
+        $allProjects = Project::where('id', $id)->get();
         $projects = ProjectResource::collection($allProjects);
         return response([
             'error' => False,
             'message' => 'Success',
             'projects' => $projects
         ], Response::HTTP_OK);
-
     }
 }

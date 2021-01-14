@@ -34,6 +34,7 @@ Route::post('/changePassword', [UserAuthController::class, 'changePassword']);
 Route::group(['middleware' => ['auth:api']], function () {
     //..................Project ................//
     Route::get('project/index',[ProjectController::class,'index']);
+    Route::get('project/{id}',[ProjectController::class,'singleProject']);
     Route::post('project/store',[ProjectController::class,'store']);
 
     //.................ProjectPursuitSummary............//
