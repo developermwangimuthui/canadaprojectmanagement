@@ -63,7 +63,7 @@ class ProjectPursuitSummaryController extends Controller
         return response([
             'error' => False,
             'message' => 'Success',
-            'allprojectspursuitsummary' => $pps
+            'pps' => $pps
         ], Response::HTTP_OK);
 
     }
