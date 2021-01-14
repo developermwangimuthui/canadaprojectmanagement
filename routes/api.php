@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth:api']], function () {
 
     //...................projectcomplexityevaluation.............//
     Route::get('projectcomplexityevaluation/index',[ProjectComplexityEvaluationController::class,'index']);
+    Route::get('projectcomplexityevaluation/{id}',[ProjectComplexityEvaluationController::class,'singleProjectPCE']);
     Route::post('projectcomplexityevaluation/store',[ProjectComplexityEvaluationController::class,'store']);
 
     //...................projectcomplexityevaluation.............//

@@ -22,6 +22,23 @@ class ProjectComplexityEvaluationController extends Controller
         ], Response::HTTP_OK);
     }
 
+    public function singleProjectPCE($id)
+    {
+        $p = ProjectComplexityEvaluation::where('project_id', $id)->get();
+        if (!$p) {
+            return response([
+                'error' => true,
+                'message' => 'PCE does not exist'
+            ], Response::HTTP_OK);
+        }
+        return response([
+            'error' => False,
+            'message' => 'Success',
+            'pps' => $p
+        ], Response::HTTP_OK);
+    }
+
+
     public function store(ProjectComplexityEvaluationRequest $request)
     {
         $projectComplexityEvaluation = new ProjectComplexityEvaluation();
@@ -37,7 +54,7 @@ class ProjectComplexityEvaluationController extends Controller
         return response([
             'error' => False,
             'message' => 'Success',
-            'projectComplexityEvaluation' => $projectComplexityEvaluation
+            'pce' => $projectComplexityEvaluation
         ], Response::HTTP_OK);
 
     }
