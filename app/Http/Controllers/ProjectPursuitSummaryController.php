@@ -25,7 +25,7 @@ class ProjectPursuitSummaryController extends Controller
 
     public function singlePPS($id)
     {
-        $p = ProjectPursuitSummary::where('id', $id)->first();
+        $p = ProjectPursuitSummary::where('project_id', $id)->first();
         if (!$p) {
             return response([
                 'error' => true,
@@ -35,7 +35,7 @@ class ProjectPursuitSummaryController extends Controller
         return response([
             'error' => False,
             'message' => 'Success',
-            'project' => $p
+            'pps' => $p
         ], Response::HTTP_OK);
     }
 
