@@ -23,6 +23,22 @@ class ProjectPursuitSummaryController extends Controller
         ], Response::HTTP_OK);
     }
 
+    public function singlePPS($id)
+    {
+        $p = ProjectPursuitSummary::where('id', $id)->first();
+        if (!$p) {
+            return response([
+                'error' => true,
+                'message' => 'PPS does not exist'
+            ], Response::HTTP_OK);
+        }
+        return response([
+            'error' => False,
+            'message' => 'Success',
+            'project' => $p
+        ], Response::HTTP_OK);
+    }
+
     public function store(ProjectPursuitSummaryRequest $request)
     {
         $projectspursuitsummary = new ProjectPursuitSummary();
@@ -42,12 +58,12 @@ class ProjectPursuitSummaryController extends Controller
         $projectspursuitsummary ->save();
         $id = $projectspursuitsummary->id;
 
-        $allprojectspursuitsummary = ProjectPursuitSummary::where('id',$id)->get();
-        $projectspursuitsummary = ProjectPursuitSummaryResource::collection($allprojectspursuitsummary);
+        $pps = ProjectPursuitSummary::where('id',$id)->first();
+        //$projectspursuitsummary = ProjectPursuitSummaryResource::collection($allprojectspursuitsummary);
         return response([
             'error' => False,
             'message' => 'Success',
-            'allprojectspursuitsummary' => $projectspursuitsummary
+            'allprojectspursuitsummary' => $pps
         ], Response::HTTP_OK);
 
     }

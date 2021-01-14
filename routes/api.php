@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     //.................ProjectPursuitSummary............//
 
     Route::get('projectpursuitsummary/index',[ProjectPursuitSummaryController::class,'index']);
+    Route::get('projectpursuitsummary/{id}',[ProjectPursuitSummaryController::class,'singlePPS']);
     Route::post('projectpursuitsummary/store',[ProjectPursuitSummaryController::class,'store']);
 
     //...........Go No Go Assesment ......................//

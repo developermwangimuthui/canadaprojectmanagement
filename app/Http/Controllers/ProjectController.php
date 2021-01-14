@@ -48,12 +48,12 @@ class ProjectController extends Controller
         $project->save();
         $id = $project->id;
 
-        $allProjects = Project::where('id', $id)->get();
-        $projects = ProjectResource::collection($allProjects);
+        $project = Project::where('id', $id)->first();
+        //$projects = ProjectResource::collection($allProjects);
         return response([
             'error' => False,
             'message' => 'Success',
-            'projects' => $projects
+            'project' => $project
         ], Response::HTTP_OK);
     }
 }
