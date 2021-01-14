@@ -24,17 +24,18 @@ class ProjectComplexityEvaluationController extends Controller
 
     public function singleProjectPCE($id)
     {
-        $p = ProjectComplexityEvaluation::where('project_id', $id)->get();
+        $p = ProjectComplexityEvaluation::where('project_id', $id)->get()->all();
         if (!$p) {
             return response([
                 'error' => true,
                 'message' => 'PCE does not exist'
             ], Response::HTTP_OK);
         }
+        $pce = ProjectComplexityEvaluationResource::collection($p);
         return response([
             'error' => False,
             'message' => 'Success',
-            'pps' => $p
+            'pps' => $pce
         ], Response::HTTP_OK);
     }
 
