@@ -15,6 +15,8 @@ use App\Http\Controllers\ProjectParticipantsController;
 use App\Http\Controllers\ProjectStagesController;
 use App\Http\Controllers\ScopeWorkDescriptionController;
 use App\Http\Controllers\WorkBreakdownStructureController;
+use App\Http\Controllers\HazardIdentificationController;
+use App\Http\Controllers\EmergencyResponsePlanController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -80,10 +82,20 @@ Route::group(['middleware' => ['auth:api']], function () {
     //...................workbreakdownStructure.............//
     Route::get('workbreakdownStructure/index',[WorkBreakdownStructureController::class,'index']);
     Route::post('workbreakdownStructure/store',[WorkBreakdownStructureController::class,'store']);
-    //...................workbreakdownStructure.............//
+
+    //...................humanResourceRequestForm.............//
     Route::get('humanResourceRequestForm/index',[HumanResourceRequestFormController::class,'index']);
     Route::get('humanResourceRequestForm/{id}',[HumanResourceRequestFormController::class,'singleProject']);
     Route::post('humanResourceRequestForm/store',[HumanResourceRequestFormController::class,'store']);
+
+    //...................hazardIdentifications.............//
+    Route::get('hazardIdentifications/index',[HazardIdentificationController::class,'index']);
+    Route::get('hazardIdentifications/{id}',[HazardIdentificationController::class,'singleProject']);
+    Route::post('hazardIdentifications/store',[HazardIdentificationController::class,'store']);
+    //...................emergencyResponsePlan.............//
+    Route::get('emergencyResponsePlan/index',[EmergencyResponsePlanController::class,'index']);
+    Route::get('emergencyResponsePlan/{id}',[EmergencyResponsePlanController::class,'singleProject']);
+    Route::post('emergencyResponsePlan/store',[EmergencyResponsePlanController::class,'store']);
 
 
 
