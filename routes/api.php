@@ -17,6 +17,7 @@ use App\Http\Controllers\ScopeWorkDescriptionController;
 use App\Http\Controllers\WorkBreakdownStructureController;
 use App\Http\Controllers\HazardIdentificationController;
 use App\Http\Controllers\EmergencyResponsePlanController;
+use App\Http\Controllers\CrewDeploymentChecklistController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -92,10 +93,17 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::get('hazardIdentifications/index',[HazardIdentificationController::class,'index']);
     Route::get('hazardIdentifications/{id}',[HazardIdentificationController::class,'singleProject']);
     Route::post('hazardIdentifications/store',[HazardIdentificationController::class,'store']);
+
     //...................emergencyResponsePlan.............//
     Route::get('emergencyResponsePlan/index',[EmergencyResponsePlanController::class,'index']);
     Route::get('emergencyResponsePlan/{id}',[EmergencyResponsePlanController::class,'singleProject']);
     Route::post('emergencyResponsePlan/store',[EmergencyResponsePlanController::class,'store']);
+
+
+    //...................crewDeploymentChecklist.............//
+    Route::get('crewDeploymentChecklist/index',[CrewDeploymentChecklistController::class,'index']);
+    Route::get('crewDeploymentChecklist/{id}',[CrewDeploymentChecklistController::class,'singleProject']);
+    Route::post('crewDeploymentChecklist/store',[CrewDeploymentChecklistController::class,'store']);
 
 
 
