@@ -18,6 +18,8 @@ use App\Http\Controllers\WorkBreakdownStructureController;
 use App\Http\Controllers\HazardIdentificationController;
 use App\Http\Controllers\EmergencyResponsePlanController;
 use App\Http\Controllers\CrewDeploymentChecklistController;
+use App\Http\Controllers\ProjectJournalController;
+use App\Http\Controllers\ProjectInitiationSummaryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -104,6 +106,17 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::get('crewDeploymentChecklist/index',[CrewDeploymentChecklistController::class,'index']);
     Route::get('crewDeploymentChecklist/{id}',[CrewDeploymentChecklistController::class,'singleProject']);
     Route::post('crewDeploymentChecklist/store',[CrewDeploymentChecklistController::class,'store']);
+
+    //...................projectJournal.............//
+    Route::get('projectJournal/index',[ProjectJournalController::class,'index']);
+    Route::get('projectJournal/{id}',[ProjectJournalController::class,'singleProject']);
+    Route::post('projectJournal/store',[ProjectJournalController::class,'store']);
+
+
+    //...................ProjectInitiationSummary.............//
+    Route::get('projectInitiationSummary/index',[ProjectInitiationSummaryController::class,'index']);
+    Route::get('projectInitiationSummary/{id}',[ProjectInitiationSummaryController::class,'singleProject']);
+    Route::post('projectInitiationSummary/store',[ProjectInitiationSummaryController::class,'store']);
 
 
 
