@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HumanResourceRequestFormController;
 use App\Models\ProjectPursuitSummary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -79,6 +80,10 @@ Route::group(['middleware' => ['auth:api']], function () {
     //...................workbreakdownStructure.............//
     Route::get('workbreakdownStructure/index',[WorkBreakdownStructureController::class,'index']);
     Route::post('workbreakdownStructure/store',[WorkBreakdownStructureController::class,'store']);
+    //...................workbreakdownStructure.............//
+    Route::get('humanResourceRequestForm/index',[HumanResourceRequestFormController::class,'index']);
+    Route::get('humanResourceRequestForm/{id}',[HumanResourceRequestFormController::class,'singleProject']);
+    Route::post('humanResourceRequestForm/store',[HumanResourceRequestFormController::class,'store']);
 
 
 
