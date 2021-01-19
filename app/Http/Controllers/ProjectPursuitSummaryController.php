@@ -26,8 +26,8 @@ class ProjectPursuitSummaryController extends Controller
 
     public function singlePPS($id)
     {
-        $p = ProjectPursuitSummary::where('project_id', $id)->get();
-        if (!$p) {
+        $projectspursuitsummarys = ProjectPursuitSummary::where('project_id', $id)->get();
+        if (!$projectspursuitsummarys) {
 
             return response([
                 'error' => true,
@@ -40,14 +40,86 @@ class ProjectPursuitSummaryController extends Controller
                 return response([
                     'error' => False,
                     'message' => 'Success',
-                    'pps' => $p
+                    'pps' => $projectspursuitsummarys
                 ], Response::HTTP_OK);
             }else {
-                return view('projectpursuitsummary.index');
+                return view('projectpursuitsummary.index',compact('projectspursuitsummarys','id'));
             }
         }
 
     }
+    public function ppsEdit($id)
+    {
+        $projectspursuitsummarys = ProjectPursuitSummary::where('id', $id)->get();
+        if (!$projectspursuitsummarys) {
+
+            return response([
+                'error' => true,
+                'message' => 'PPS does not exist'
+            ], Response::HTTP_OK);
+        }else {
+
+            if (Str::startsWith(request()->path(), 'api'))  {
+
+                return response([
+                    'error' => False,
+                    'message' => 'Success',
+                    'pps' => $projectspursuitsummarys
+                ], Response::HTTP_OK);
+            }else {
+                return view('projectpursuitsummary.edit',compact('projectspursuitsummarys','id'));
+            }
+        }
+
+    }
+    public function ppsUpdate(Request $request)
+    {
+
+        ProjectPursuitSummary::where('id',$request->input('id'))
+                    ->update([
+
+                        'bos' => $request->input('bos'),
+                        'stbc' => $request->input('stbc'),
+                        'pedc' => $request->input('pedc'),
+                        'proposal_timeline'  =>$request->input('proposal_timeline'),
+                        'project_timeline'  =>$request->input('project_timeline'),
+                        'project_stakeholders'=>$request->input('project_stakeholders'),
+                        'pb_requirements'   =>$request->input('pb_requirements'),
+                        'ipri'  => $request->input('ipri'),
+                        'isbc'  => $request->input('isbc'),
+                        'communication_notes'=>$request->input('communication_notes'),
+                        'ofav'  => $request->input('ofav'),
+                        'sredo'  => $request->input('sredo'),
+                    ]);
+
+                    $projectspursuitsummarys = ProjectPursuitSummary::where('id',$request->input('id'))->get();
+
+                    if (!$projectspursuitsummarys) {
+
+            return response([
+                'error' => true,
+                'message' => 'PPS does not exist'
+            ], Response::HTTP_OK);
+        }else {
+
+            if (Str::startsWith(request()->path(), 'api'))  {
+
+                return response([
+                    'error' => False,
+                    'message' => 'Success',
+                    'pps' => $projectspursuitsummarys
+                ], Response::HTTP_OK);
+            }else {
+
+                $id = ProjectPursuitSummary::where('id',$request->input('id'))->pluck('project_id')->first();
+                return redirect()->route('singlePPS',$id);
+            }
+        }
+
+    }
+
+
+
 
     public function store(ProjectPursuitSummaryRequest $request)
     {
@@ -67,14 +139,21 @@ class ProjectPursuitSummaryController extends Controller
         $projectspursuitsummary ->sredo  = $request->input('sredo');
         $projectspursuitsummary ->save();
         $id = $projectspursuitsummary->id;
+        $project_id = $request->input('project_id');
 
         $pps = ProjectPursuitSummary::where('id',$id)->first();
         //$projectspursuitsummary = ProjectPursuitSummaryResource::collection($allprojectspursuitsummary);
-        return response([
-            'error' => False,
-            'message' => 'Success',
-            'pps' => $pps
-        ], Response::HTTP_OK);
+
+        if (Str::startsWith(request()->path(), 'api'))  {
+
+            return response([
+                'error' => False,
+                'message' => 'Success',
+                'pps' => $pps
+            ], Response::HTTP_OK);
+        }else {
+            return redirect()->route('singlePPS',$project_id);
+        }
 
     }
 }

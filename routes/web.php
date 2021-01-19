@@ -51,9 +51,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     //.................ProjectPursuitSummary............//
 
-    Route::get('projectpursuitsummary/index',[ProjectPursuitSummaryController::class,'index']);
+    Route::get('projectpursuitsummary/index',[ProjectPursuitSummaryController::class,'index'])->name('pps.index');
     Route::get('projectpursuitsummary/{id}',[ProjectPursuitSummaryController::class,'singlePPS'])->name('singlePPS');
-    Route::post('projectpursuitsummary/store',[ProjectPursuitSummaryController::class,'store']);
+    Route::get('projectpursuitsummary/edit/{id}',[ProjectPursuitSummaryController::class,'ppsEdit'])->name('ppsEdit');
+    Route::post('projectpursuitsummary/update',[ProjectPursuitSummaryController::class,'ppsUpdate'])->name('ppsUpdate');
+    Route::post('projectpursuitsummary/store',[ProjectPursuitSummaryController::class,'store'])->name('pps.store');
 
     //...........Go No Go Assesment ......................//
 
