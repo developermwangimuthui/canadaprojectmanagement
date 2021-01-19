@@ -24,45 +24,45 @@
 <div class="tab-content">
 <div class="tab-pane fade show active" id="Project-OnGoing" role="tabpanel">
 <div class="row">
-    @foreach ($allProjects as $project)
-<a href="{{route('project.details',$project->id)}}">
-    <div class="col-lg-6 col-md-12">
-    <div class="card">
-    <div class="card-header">
-    <h3 class="card-title">Project Reference Number : {{$project->reference_number}}</h3>
-    <div class="card-options">
-    <label class="custom-switch m-0">
-    <input type="checkbox" value="1" class="custom-switch-input" checked>
-    <span class="custom-switch-indicator"></span>
-    </label>
-    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-    </div>
-    </div>
-    <div class="card-body">
-    <span class="tag tag-blue mb-3">{{$project->name}}</span>
-    <div class="row">
-    <div class="col-5 py-1"><strong>Project Manager:</strong></div>
-    <div class="col-7 py-1">{{$project->project_manager}}</div>
-    <div class="col-5 py-1"><strong>Project Sponsor:</strong></div>
-    <div class="col-7 py-1">{{$project->project_sponsor}}</div>
-    <div class="col-5 py-1"><strong>Pursuit Lead:</strong></div>
-    <div class="col-7 py-1">{{$project->pursuit_lead}}</div>
-    <div class="col-5 py-1"><strong>Market Sector:</strong></div>
-    <div class="col-7 py-1">{{$project->market_sector}}</div>
-    <div class="col-5 py-1"><strong>Type of Work:</strong></div>
-    <div class="col-7 py-1">{{$project->type_of_work}}</div>
-    <div class="col-5 py-1"><strong>Region:</strong></div>
-    <div class="col-7 py-1">{{$project->region}}</div>
-    <div class="col-5 py-1"><strong>Expected Start Date:</strong></div>
-    <div class="col-7 py-1">{{$project->expected_start_date}}</div>
-    <div class="col-5 py-1"><strong>Expected End Date:</strong></div>
-    <div class="col-7 py-1">{{$project->expected_end_date}}</div>
-    </div>
-    </div>
-    </div>
-    </div>
-</a>
-    @endforeach
+    {{-- @foreach ($allProjects as $project) --}}
+{{-- <a href="{{route('project.details',$project->id)}}"> --}}
+    {{-- <div class="col-lg-6 col-md-12"> --}}
+    {{-- <div class="card"> --}}
+    {{-- <div class="card-header"> --}}
+    {{-- <h3 class="card-title">Project Reference Number : {{$project->reference_number}}</h3> --}}
+    {{-- <div class="card-options"> --}}
+    {{-- <label class="custom-switch m-0"> --}}
+    {{-- <input type="checkbox" value="1" class="custom-switch-input" checked> --}}
+    {{-- <span class="custom-switch-indicator"></span> --}}
+    {{-- </label> --}}
+    {{-- <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a> --}}
+    {{-- </div> --}}
+    {{-- </div> --}}
+    {{-- <div class="card-body"> --}}
+    {{-- <span class="tag tag-blue mb-3">{{$project->name}}</span> --}}
+    {{-- <div class="row"> --}}
+    {{-- <div class="col-5 py-1"><strong>Project Manager:</strong></div> --}}
+    {{-- <div class="col-7 py-1">{{$project->project_manager}}</div> --}}
+    {{-- <div class="col-5 py-1"><strong>Project Sponsor:</strong></div> --}}
+    {{-- <div class="col-7 py-1">{{$project->project_sponsor}}</div> --}}
+    {{-- <div class="col-5 py-1"><strong>Pursuit Lead:</strong></div> --}}
+    {{-- <div class="col-7 py-1">{{$project->pursuit_lead}}</div> --}}
+    {{-- <div class="col-5 py-1"><strong>Market Sector:</strong></div> --}}
+    {{-- <div class="col-7 py-1">{{$project->market_sector}}</div> --}}
+    {{-- <div class="col-5 py-1"><strong>Type of Work:</strong></div> --}}
+    {{-- <div class="col-7 py-1">{{$project->type_of_work}}</div> --}}
+    {{-- <div class="col-5 py-1"><strong>Region:</strong></div> --}}
+    {{-- <div class="col-7 py-1">{{$project->region}}</div> --}}
+    {{-- <div class="col-5 py-1"><strong>Expected Start Date:</strong></div> --}}
+    {{-- <div class="col-7 py-1">{{$project->expected_start_date}}</div> --}}
+    {{-- <div class="col-5 py-1"><strong>Expected End Date:</strong></div> --}}
+    {{-- <div class="col-7 py-1">{{$project->expected_end_date}}</div> --}}
+    {{-- </div> --}}
+    {{-- </div> --}}
+    {{-- </div> --}}
+    {{-- </div> --}}
+{{-- </a> --}}
+    {{-- @endforeach --}}
 </div>
 
 

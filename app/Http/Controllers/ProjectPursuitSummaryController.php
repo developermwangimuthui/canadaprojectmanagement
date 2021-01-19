@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Models\ProjectPursuitSummary;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Str;
 
 class ProjectPursuitSummaryController extends Controller
 {
@@ -25,18 +26,27 @@ class ProjectPursuitSummaryController extends Controller
 
     public function singlePPS($id)
     {
-        $p = ProjectPursuitSummary::where('project_id', $id)->first();
+        $p = ProjectPursuitSummary::where('project_id', $id)->get();
         if (!$p) {
+
             return response([
                 'error' => true,
                 'message' => 'PPS does not exist'
             ], Response::HTTP_OK);
+        }else {
+
+            if (Str::startsWith(request()->path(), 'api'))  {
+
+                return response([
+                    'error' => False,
+                    'message' => 'Success',
+                    'pps' => $p
+                ], Response::HTTP_OK);
+            }else {
+                return view('projectpursuitsummary.index');
+            }
         }
-        return response([
-            'error' => False,
-            'message' => 'Success',
-            'pps' => $p
-        ], Response::HTTP_OK);
+
     }
 
     public function store(ProjectPursuitSummaryRequest $request)

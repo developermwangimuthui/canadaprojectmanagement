@@ -43,6 +43,15 @@ class ProjectController extends Controller
             'project' => $p
         ], Response::HTTP_OK);
     }
+    public function details($id)
+    {
+        $projects = Project::where('id', $id)->get();
+        // dd($projects);
+        if ($projects) {
+            return view('project.details',compact('projects'));
+        }
+
+    }
 
     public function store(ProjectRequest $request)
     {

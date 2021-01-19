@@ -52,6 +52,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     //...........Go No Go Assesment ......................//
 
     Route::get('gonogoassesment/index',[GoNoGoAssesmentController::class,'index']);
+    Route::get('gonogoassesment/{id}',[GoNoGoAssesmentController::class,'singleGonogo']);
     Route::post('gonogoassesment/store',[GoNoGoAssesmentController::class,'store']);
 
     //...................projectlessonlearntsummary.............//

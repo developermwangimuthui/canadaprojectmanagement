@@ -45,13 +45,14 @@ Route::prefix('web')->group(function () {
 Route::group(['middleware' => ['auth']], function () {
     //..................Project ................//
     Route::get('/project/index',[ProjectController::class,'webindex'])->name('project.home');
+    Route::get('/project/details/{id}',[ProjectController::class,'details'])->name('project.details');
     Route::get('/project/{id}',[ProjectController::class,'singleProject'])->name('project.single');
     Route::post('project/store',[ProjectController::class,'store'])->name('project.store');
 
     //.................ProjectPursuitSummary............//
 
     Route::get('projectpursuitsummary/index',[ProjectPursuitSummaryController::class,'index']);
-    Route::get('projectpursuitsummary/{id}',[ProjectPursuitSummaryController::class,'singlePPS']);
+    Route::get('projectpursuitsummary/{id}',[ProjectPursuitSummaryController::class,'singlePPS'])->name('singlePPS');
     Route::post('projectpursuitsummary/store',[ProjectPursuitSummaryController::class,'store']);
 
     //...........Go No Go Assesment ......................//
