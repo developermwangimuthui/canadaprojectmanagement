@@ -7,6 +7,8 @@ use App\Http\Resources\ProjectResource;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Str;
+
 
 class ProjectController extends Controller
 {
@@ -19,6 +21,11 @@ class ProjectController extends Controller
             'message' => 'Success',
             'projects' => $projects
         ], Response::HTTP_OK);
+    }
+    public function webindex()
+    {
+        $allProjects = Project::all();
+        return view('project.index',compact('allProjects'));
     }
 
     public function singleProject($id)
@@ -44,9 +51,15 @@ class ProjectController extends Controller
         $project->reference_number = $request->input('reference_number');
         $project->project_sponsor = $request->input('project_sponsor');
         $project->pursuit_lead = $request->input('pursuit_lead');
-        $project->date = $request->input('date');
+        $project->project_manager = $request->input('project_manager');
+        $project->market_sector = $request->input('market_sector');
+        $project->type_of_work = $request->input('type_of_work');
+        $project->region = $request->input('region');
+        $project->expected_start_date = $request->input('expected_start_date');
+        $project->expected_end_date = $request->input('expected_end_date');
         $project->save();
         $id = $project->id;
+        if (Str::startsWith(request()->path(), 'api'))  {
 
         $p = Project::where('id', $id)->first();
         //$projects = ProjectResource::collection($allProjects);
@@ -55,5 +68,8 @@ class ProjectController extends Controller
             'message' => 'Success',
             'project' => $p
         ], Response::HTTP_OK);
+    }else {
+        return redirect()->route('project.home');
+    }
     }
 }

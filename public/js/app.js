@@ -60,6 +60,260 @@ module.exports = _extends;
 
 /***/ }),
 
+/***/ "./node_modules/@chakra-ui/button/dist/esm/button-group.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@chakra-ui/button/dist/esm/button-group.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useButtonGroup": () => /* binding */ useButtonGroup,
+/* harmony export */   "ButtonGroup": () => /* binding */ ButtonGroup
+/* harmony export */ });
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/esm/index.js");
+/* harmony import */ var _chakra_ui_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/utils */ "./node_modules/@chakra-ui/utils/dist/esm/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+var [ButtonGroupProvider, useButtonGroup] = (0,_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_1__.createContext)({
+  strict: false,
+  name: "ButtonGroupContext"
+});
+
+var ButtonGroup = /*#__PURE__*/(0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__.forwardRef)((props, ref) => {
+  var {
+    size,
+    colorScheme,
+    variant,
+    className,
+    spacing = "0.5rem",
+    isAttached,
+    isDisabled
+  } = props,
+      rest = _objectWithoutPropertiesLoose(props, ["size", "colorScheme", "variant", "className", "spacing", "isAttached", "isDisabled"]);
+
+  var _className = (0,_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_1__.cx)("chakra-button__group", className);
+
+  var context = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => ({
+    size,
+    colorScheme,
+    variant,
+    isDisabled
+  }), [size, colorScheme, variant, isDisabled]);
+  var groupStyles = {
+    display: "inline-flex"
+  };
+
+  if (isAttached) {
+    groupStyles = _extends({}, groupStyles, {
+      "> *:first-of-type:not(:last-of-type)": {
+        borderRightRadius: 0
+      },
+      "> *:not(:first-of-type):not(:last-of-type)": {
+        borderRadius: 0
+      },
+      "> *:not(:first-of-type):last-of-type": {
+        borderLeftRadius: 0
+      }
+    });
+  } else {
+    groupStyles = _extends({}, groupStyles, {
+      "& > *:not(style) ~ *:not(style)": {
+        marginLeft: spacing
+      }
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ButtonGroupProvider, {
+    value: context
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__.chakra.div, _extends({
+    ref: ref,
+    role: "group",
+    __css: groupStyles,
+    className: _className
+  }, rest)));
+});
+
+if (_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_1__.__DEV__) {
+  ButtonGroup.displayName = "ButtonGroup";
+}
+//# sourceMappingURL=button-group.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@chakra-ui/button/dist/esm/button.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@chakra-ui/button/dist/esm/button.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Button": () => /* binding */ Button
+/* harmony export */ });
+/* harmony import */ var _chakra_ui_spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/spinner */ "./node_modules/@chakra-ui/spinner/dist/esm/spinner.js");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/esm/index.js");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/esm/system.utils.js");
+/* harmony import */ var _chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/utils */ "./node_modules/@chakra-ui/utils/dist/esm/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _button_group__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./button-group */ "./node_modules/@chakra-ui/button/dist/esm/button-group.js");
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+
+
+
+var Button = /*#__PURE__*/(0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, ref) => {
+  var _styles$_focus;
+
+  var group = (0,_button_group__WEBPACK_IMPORTED_MODULE_2__.useButtonGroup)();
+  var styles = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.useStyleConfig)("Button", _extends({}, group, props));
+
+  var _omitThemingProps = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_3__.omitThemingProps)(props),
+      {
+    isDisabled = group == null ? void 0 : group.isDisabled,
+    isLoading,
+    isActive,
+    isFullWidth,
+    children,
+    leftIcon,
+    rightIcon,
+    loadingText,
+    iconSpacing = "0.5rem",
+    type = "button",
+    spinner,
+    className,
+    as
+  } = _omitThemingProps,
+      rest = _objectWithoutPropertiesLoose(_omitThemingProps, ["isDisabled", "isLoading", "isActive", "isFullWidth", "children", "leftIcon", "rightIcon", "loadingText", "iconSpacing", "type", "spinner", "className", "as"]);
+  /**
+   * When button is used within ButtonGroup (i.e flushed with sibling buttons),
+   * it is important to add a `zIndex` on focus.
+   *
+   * So let's read the component styles and then add `zIndex` to it.
+   */
+
+
+  var _focus = (0,_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.mergeWith)({}, (_styles$_focus = styles == null ? void 0 : styles["_focus"]) != null ? _styles$_focus : {}, {
+    zIndex: 1
+  });
+
+  var buttonStyles = _extends({
+    display: "inline-flex",
+    appearance: "none",
+    alignItems: "center",
+    justifyContent: "center",
+    transition: "all 250ms",
+    userSelect: "none",
+    position: "relative",
+    whiteSpace: "nowrap",
+    verticalAlign: "middle",
+    outline: "none",
+    width: isFullWidth ? "100%" : "auto"
+  }, styles, !!group && {
+    _focus
+  });
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.chakra.button, _extends({
+    disabled: isDisabled || isLoading,
+    ref: ref,
+    as: as,
+    type: as ? undefined : type,
+    "data-active": (0,_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.dataAttr)(isActive),
+    "data-loading": (0,_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.dataAttr)(isLoading),
+    __css: buttonStyles,
+    className: (0,_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.cx)("chakra-button", className)
+  }, rest), leftIcon && !isLoading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ButtonIcon, {
+    marginEnd: iconSpacing
+  }, leftIcon), isLoading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ButtonSpinner, {
+    __css: {
+      fontSize: "1em",
+      lineHeight: "normal"
+    },
+    spacing: iconSpacing,
+    label: loadingText
+  }, spinner), isLoading ? loadingText || /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.chakra.span, {
+    opacity: 0
+  }, children) : children, rightIcon && !isLoading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ButtonIcon, {
+    marginStart: iconSpacing
+  }, rightIcon));
+});
+
+if (_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.__DEV__) {
+  Button.displayName = "Button";
+}
+
+var ButtonIcon = props => {
+  var {
+    children,
+    className
+  } = props,
+      rest = _objectWithoutPropertiesLoose(props, ["children", "className"]);
+
+  var _children = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(children) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(children, {
+    "aria-hidden": true,
+    focusable: false
+  }) : children;
+
+  var _className = (0,_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.cx)("chakra-button__icon", className);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.chakra.span, _extends({}, rest, {
+    className: _className
+  }), _children);
+};
+
+if (_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.__DEV__) {
+  ButtonIcon.displayName = "ButtonIcon";
+}
+
+var ButtonSpinner = props => {
+  var {
+    label,
+    spacing,
+    children = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_chakra_ui_spinner__WEBPACK_IMPORTED_MODULE_5__.Spinner, {
+      color: "currentColor",
+      width: "1em",
+      height: "1em"
+    }),
+    className,
+    __css
+  } = props,
+      rest = _objectWithoutPropertiesLoose(props, ["label", "spacing", "children", "className", "__css"]);
+
+  var _className = (0,_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.cx)("chakra-button__spinner", className);
+
+  var spinnerStyles = _extends({
+    display: "flex",
+    alignItems: "center",
+    position: label ? "relative" : "absolute",
+    marginEnd: label ? spacing : 0
+  }, __css);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.chakra.div, _extends({
+    className: _className
+  }, rest, {
+    __css: spinnerStyles
+  }), children);
+};
+
+if (_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.__DEV__) {
+  ButtonSpinner.displayName = "ButtonSpinner";
+}
+//# sourceMappingURL=button.js.map
+
+/***/ }),
+
 /***/ "./node_modules/@chakra-ui/color-mode/dist/esm/color-mode-provider.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/@chakra-ui/color-mode/dist/esm/color-mode-provider.js ***!
@@ -1674,6 +1928,88 @@ var ChakraProvider = props => {
   }, children) : children));
 };
 //# sourceMappingURL=chakra-provider.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@chakra-ui/spinner/dist/esm/spinner.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@chakra-ui/spinner/dist/esm/spinner.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Spinner": () => /* binding */ Spinner
+/* harmony export */ });
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@emotion/react/dist/emotion-react.browser.esm.js");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/esm/index.js");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/esm/system.utils.js");
+/* harmony import */ var _chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/utils */ "./node_modules/@chakra-ui/utils/dist/esm/index.js");
+/* harmony import */ var _chakra_ui_visually_hidden__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/visually-hidden */ "./node_modules/@chakra-ui/visually-hidden/dist/esm/visually-hidden.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+var spin = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.keyframes)({
+  "0%": {
+    transform: "rotate(0deg)"
+  },
+  "100%": {
+    transform: "rotate(360deg)"
+  }
+});
+
+/**
+ * Spinner is used to indicate the loading state of a page or a component,
+ * It renders a `div` by default.
+ *
+ * @see Docs https://chakra-ui.com/docs/feedback/spinner
+ */
+var Spinner = /*#__PURE__*/(0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__.forwardRef)((props, ref) => {
+  var styles = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__.useStyleConfig)("Spinner", props);
+
+  var _omitThemingProps = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_3__.omitThemingProps)(props),
+      {
+    label = "Loading...",
+    thickness = "2px",
+    speed = "0.45s",
+    color,
+    emptyColor = "transparent",
+    className
+  } = _omitThemingProps,
+      rest = _objectWithoutPropertiesLoose(_omitThemingProps, ["label", "thickness", "speed", "color", "emptyColor", "className"]);
+
+  var _className = (0,_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.cx)("chakra-spinner", className);
+
+  var spinnerStyles = _extends({
+    display: "inline-block",
+    borderColor: "currentColor",
+    borderStyle: "solid",
+    borderRadius: "99999px",
+    borderWidth: thickness,
+    borderBottomColor: emptyColor,
+    borderLeftColor: emptyColor,
+    color,
+    animation: spin + " " + speed + " linear infinite"
+  }, styles);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__.chakra.div, _extends({
+    ref: ref,
+    __css: spinnerStyles,
+    className: _className
+  }, rest), label && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_chakra_ui_visually_hidden__WEBPACK_IMPORTED_MODULE_5__.VisuallyHidden, null, label));
+});
+
+if (_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_4__.__DEV__) {
+  Spinner.displayName = "Spinner";
+}
+//# sourceMappingURL=spinner.js.map
 
 /***/ }),
 
@@ -10267,6 +10603,72 @@ function focus(element, options) {
 
 /***/ }),
 
+/***/ "./node_modules/@chakra-ui/visually-hidden/dist/esm/visually-hidden.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@chakra-ui/visually-hidden/dist/esm/visually-hidden.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "visuallyHiddenStyle": () => /* binding */ visuallyHiddenStyle,
+/* harmony export */   "VisuallyHidden": () => /* binding */ VisuallyHidden,
+/* harmony export */   "VisuallyHiddenInput": () => /* binding */ VisuallyHiddenInput,
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/esm/index.js");
+/* harmony import */ var _chakra_ui_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/utils */ "./node_modules/@chakra-ui/utils/dist/esm/index.js");
+
+
+
+/**
+ * Styles to visually hide an element
+ * but make it accessible to screen-readers
+ */
+var visuallyHiddenStyle = {
+  border: "0px",
+  clip: "rect(0px, 0px, 0px, 0px)",
+  height: "1px",
+  width: "1px",
+  margin: "-1px",
+  padding: "0px",
+  overflow: "hidden",
+  whiteSpace: "nowrap",
+  position: "absolute"
+};
+/**
+ * Visually hidden component used to hide
+ * elements on screen
+ */
+
+var VisuallyHidden = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_0__.chakra)("span", {
+  baseStyle: visuallyHiddenStyle
+});
+
+if (_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_1__.__DEV__) {
+  VisuallyHidden.displayName = "VisuallyHidden";
+}
+/**
+ * Visually hidden input component for designing
+ * custom input components using the html `input`
+ * as a proxy
+ */
+
+
+var VisuallyHiddenInput = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_0__.chakra)("input", {
+  baseStyle: visuallyHiddenStyle
+});
+
+if (_chakra_ui_utils__WEBPACK_IMPORTED_MODULE_1__.__DEV__) {
+  VisuallyHiddenInput.displayName = "VisuallyHiddenInput";
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VisuallyHidden);
+//# sourceMappingURL=visually-hidden.js.map
+
+/***/ }),
+
 /***/ "./node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js ***!
@@ -14097,87 +14499,157 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/react/dist/esm/chakra-provider.js");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/esm/box.js");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/esm/stack.js");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/form-control/dist/esm/form-control.js");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/input/dist/esm/input-group.js");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/input/dist/esm/input-addon.js");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/icon/dist/esm/icon.js");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/input/dist/esm/input.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/react/dist/esm/chakra-provider.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/esm/box.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/esm/stack.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/form-control/dist/esm/form-control.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/input/dist/esm/input-group.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/input/dist/esm/input-addon.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/icon/dist/esm/icon.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/input/dist/esm/input.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/esm/button.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 // 1. import `ChakraProvider` component
 
 
 
 
-function Example() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.ChakraProvider, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Box, {
-      bg: "tomato",
-      w: "100%",
-      p: 4,
-      color: "white",
-      children: "This is the Box"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("form", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, {
-        spacing: 3,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormControl, {
-          isRequired: true,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.InputGroup, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.InputLeftAddon, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, {
-                name: "info"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__.Input, {
-              type: "text",
-              placeholder: "Name"
-            })]
+
+var Example = /*#__PURE__*/function (_React$Component) {
+  _inherits(Example, _React$Component);
+
+  var _super = _createSuper(Example);
+
+  function Example(props) {
+    var _this;
+
+    _classCallCheck(this, Example);
+
+    _this = _super.call(this, props);
+    _this.handleSubmit = _this.handleSubmit.bind;
+    _this.state = {
+      password: '',
+      email: '',
+      loading: false
+    };
+    return _this;
+  }
+
+  _createClass(Example, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var user = {
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password
+      };
+      axios__WEBPACK_IMPORTED_MODULE_3___default().post('http://127.0.0.1:8000/api/newlogin', {
+        user: user
+      }).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {});
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.ChakraProvider, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Box, {
+          maxW: "md",
+          borderWidth: "1px",
+          overflow: "hidden",
+          mt: "10",
+          alignItems: "center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("form", {
+            onSubmit: this.handleSubmit,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, {
+              spacing: 3,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.FormControl, {
+                isRequired: true,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.InputGroup, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.InputLeftAddon, {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__.Icon, {
+                      name: "info"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_11__.Input, {
+                    type: "text",
+                    placeholder: "Name",
+                    value: this.state.name
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.FormControl, {
+                isRequired: true,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.InputGroup, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.InputLeftAddon, {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__.Icon, {
+                      name: "email"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_11__.Input, {
+                    type: "text",
+                    placeholder: "Email",
+                    value: this.state.email
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.FormControl, {
+                isRequired: true,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.InputGroup, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.InputLeftAddon, {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__.Icon, {
+                      name: "lock"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_11__.Input, {
+                    type: "text",
+                    placeholder: "Password",
+                    value: this.state.password
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_12__.Button, {
+                type: "submit",
+                boxShadow: "sm",
+                _hover: {
+                  boxShadow: 'md'
+                },
+                _active: {
+                  boxShadow: 'lg'
+                }
+              })]
+            })
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormControl, {
-          isRequired: true,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.InputGroup, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.InputLeftAddon, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, {
-                name: "info"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__.Input, {
-              type: "email",
-              placeholder: "Name"
-            })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormControl, {
-          isRequired: true,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.InputGroup, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.InputLeftAddon, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, {
-                name: "info"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__.Input, {
-              type: "text",
-              placeholder: "Name"
-            })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormControl, {
-          isRequired: true,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.InputGroup, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.InputLeftAddon, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, {
-                name: "info"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__.Input, {
-              type: "text",
-              placeholder: "Name"
-            })]
-          })
-        })]
-      })
-    })]
-  });
-}
+        })
+      });
+    }
+  }]);
+
+  return Example;
+}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Example);
 

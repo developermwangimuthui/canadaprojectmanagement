@@ -133,6 +133,7 @@ class ComposerStaticInitf95a395848b3013adb863361fefe9832
             'League\\CommonMark\\' => 18,
             'Lcobucci\\JWT\\' => 13,
             'Lcobucci\\Clock\\' => 15,
+            'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Sail\\' => 13,
             'Laravel\\Passport\\Database\\Factories\\' => 36,
@@ -141,6 +142,7 @@ class ComposerStaticInitf95a395848b3013adb863361fefe9832
         'I' => 
         array (
             'Illuminate\\Support\\' => 19,
+            'Illuminate\\Foundation\\Auth\\' => 27,
             'Illuminate\\' => 11,
         ),
         'H' => 
@@ -431,6 +433,10 @@ class ComposerStaticInitf95a395848b3013adb863361fefe9832
         array (
             0 => __DIR__ . '/..' . '/lcobucci/clock/src',
         ),
+        'Laravel\\Ui\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/src',
+        ),
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
@@ -451,6 +457,10 @@ class ComposerStaticInitf95a395848b3013adb863361fefe9832
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
             1 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections',
+        ),
+        'Illuminate\\Foundation\\Auth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/auth-backend',
         ),
         'Illuminate\\' => 
         array (
@@ -583,6 +593,7 @@ class ComposerStaticInitf95a395848b3013adb863361fefe9832
         'App\\Http\\Controllers\\HumanResourceRequestFormController' => __DIR__ . '/../..' . '/app/Http/Controllers/HumanResourceRequestFormController.php',
         'App\\Http\\Controllers\\ProjectComplexityEvaluationController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectComplexityEvaluationController.php',
         'App\\Http\\Controllers\\ProjectController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectController.php',
+        'App\\Http\\Controllers\\ProjectInitiationSummaryController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectInitiationSummaryController.php',
         'App\\Http\\Controllers\\ProjectJournalController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectJournalController.php',
         'App\\Http\\Controllers\\ProjectLessonLearntSummaryController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectLessonLearntSummaryController.php',
         'App\\Http\\Controllers\\ProjectParticipantsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectParticipantsController.php',
@@ -620,6 +631,7 @@ class ComposerStaticInitf95a395848b3013adb863361fefe9832
         'App\\Http\\Resources\\HazardIdentificationResource' => __DIR__ . '/../..' . '/app/Http/Resources/HazardIdentificationResource.php',
         'App\\Http\\Resources\\HumanResourceRequestFormResource' => __DIR__ . '/../..' . '/app/Http/Resources/HumanResourceRequestFormResource.php',
         'App\\Http\\Resources\\ProjectComplexityEvaluationResource' => __DIR__ . '/../..' . '/app/Http/Resources/ProjectComplexityEvaluationResource.php',
+        'App\\Http\\Resources\\ProjectInitiationSummaryResource' => __DIR__ . '/../..' . '/app/Http/Resources/ProjectInitiationSummaryResource.php',
         'App\\Http\\Resources\\ProjectJournalResource' => __DIR__ . '/../..' . '/app/Http/Resources/ProjectJournalResource.php',
         'App\\Http\\Resources\\ProjectLessonLearntSummaryResource' => __DIR__ . '/../..' . '/app/Http/Resources/ProjectLessonLearntSummaryResource.php',
         'App\\Http\\Resources\\ProjectParticipantResource' => __DIR__ . '/../..' . '/app/Http/Resources/ProjectParticipantResource.php',
@@ -640,8 +652,8 @@ class ComposerStaticInitf95a395848b3013adb863361fefe9832
         'App\\Models\\Project' => __DIR__ . '/../..' . '/app/Models/Project.php',
         'App\\Models\\ProjectComplexityEvaluation' => __DIR__ . '/../..' . '/app/Models/ProjectComplexityEvaluation.php',
         'App\\Models\\ProjectInitiationSummaryCommunicationPlan' => __DIR__ . '/../..' . '/app/Models/ProjectInitiationSummaryCommunicationPlan.php',
-        'App\\Models\\ProjectInitiationSummaryExpectedDeliverables' => __DIR__ . '/../..' . '/app/Models/ProjectInitiationSummaryExpectedDeliverables.php',
-        'App\\Models\\ProjectInitiationSummarySubcontractors' => __DIR__ . '/../..' . '/app/Models/ProjectInitiationSummarySubcontractors.php',
+        'App\\Models\\ProjectInitiationSummaryExpectedDeliverable' => __DIR__ . '/../..' . '/app/Models/ProjectInitiationSummaryExpectedDeliverable.php',
+        'App\\Models\\ProjectInitiationSummarySubcontractor' => __DIR__ . '/../..' . '/app/Models/ProjectInitiationSummarySubcontractor.php',
         'App\\Models\\ProjectInitiationSummaryTeam' => __DIR__ . '/../..' . '/app/Models/ProjectInitiationSummaryTeam.php',
         'App\\Models\\ProjectJournal' => __DIR__ . '/../..' . '/app/Models/ProjectJournal.php',
         'App\\Models\\ProjectLessonLearntSummary' => __DIR__ . '/../..' . '/app/Models/ProjectLessonLearntSummary.php',
@@ -2144,8 +2156,16 @@ class ComposerStaticInitf95a395848b3013adb863361fefe9832
         'Illuminate\\Foundation\\Application' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Application.php',
         'Illuminate\\Foundation\\Auth\\Access\\Authorizable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/Authorizable.php',
         'Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php',
+        'Illuminate\\Foundation\\Auth\\AuthenticatesUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/AuthenticatesUsers.php',
+        'Illuminate\\Foundation\\Auth\\ConfirmsPasswords' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ConfirmsPasswords.php',
         'Illuminate\\Foundation\\Auth\\EmailVerificationRequest' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/EmailVerificationRequest.php',
+        'Illuminate\\Foundation\\Auth\\RedirectsUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/RedirectsUsers.php',
+        'Illuminate\\Foundation\\Auth\\RegistersUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/RegistersUsers.php',
+        'Illuminate\\Foundation\\Auth\\ResetsPasswords' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ResetsPasswords.php',
+        'Illuminate\\Foundation\\Auth\\SendsPasswordResetEmails' => __DIR__ . '/..' . '/laravel/ui/auth-backend/SendsPasswordResetEmails.php',
+        'Illuminate\\Foundation\\Auth\\ThrottlesLogins' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ThrottlesLogins.php',
         'Illuminate\\Foundation\\Auth\\User' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/User.php',
+        'Illuminate\\Foundation\\Auth\\VerifiesEmails' => __DIR__ . '/..' . '/laravel/ui/auth-backend/VerifiesEmails.php',
         'Illuminate\\Foundation\\Bootstrap\\BootProviders' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php',
         'Illuminate\\Foundation\\Bootstrap\\HandleExceptions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php',
         'Illuminate\\Foundation\\Bootstrap\\LoadConfiguration' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php',
@@ -2726,6 +2746,15 @@ class ComposerStaticInitf95a395848b3013adb863361fefe9832
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
+        'Laravel\\Ui\\AuthCommand' => __DIR__ . '/..' . '/laravel/ui/src/AuthCommand.php',
+        'Laravel\\Ui\\AuthRouteMethods' => __DIR__ . '/..' . '/laravel/ui/src/AuthRouteMethods.php',
+        'Laravel\\Ui\\ControllersCommand' => __DIR__ . '/..' . '/laravel/ui/src/ControllersCommand.php',
+        'Laravel\\Ui\\Presets\\Bootstrap' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Bootstrap.php',
+        'Laravel\\Ui\\Presets\\Preset' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Preset.php',
+        'Laravel\\Ui\\Presets\\React' => __DIR__ . '/..' . '/laravel/ui/src/Presets/React.php',
+        'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
+        'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
+        'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
         'Lcobucci\\Clock\\Clock' => __DIR__ . '/..' . '/lcobucci/clock/src/Clock.php',
         'Lcobucci\\Clock\\FrozenClock' => __DIR__ . '/..' . '/lcobucci/clock/src/FrozenClock.php',
         'Lcobucci\\Clock\\SystemClock' => __DIR__ . '/..' . '/lcobucci/clock/src/SystemClock.php',

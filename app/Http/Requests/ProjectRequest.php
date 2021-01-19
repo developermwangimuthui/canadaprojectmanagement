@@ -29,6 +29,12 @@ class ProjectRequest extends FormRequest
             'reference_number' => 'required',
             'project_sponsor' => 'required',
             'pursuit_lead' => 'required',
+            'project_manager' => 'required',
+            'market_sector' => 'required',
+            'type_of_work' => 'required',
+            'region' => 'required',
+            'expected_start_date' => 'required',
+            'expected_end_date' => 'required',
 
         ];
     }

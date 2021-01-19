@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'f383ac5826cb7cb5510500501f72463d4b192f1f',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -458,12 +458,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'f383ac5826cb7cb5510500501f72463d4b192f1f',
     ),
     'laravel/passport' => 
     array (
@@ -491,6 +491,15 @@
       array (
       ),
       'reference' => '45884b526e10a88a1b179fa1a1a24d5468c668c2',
+    ),
+    'laravel/ui' => 
+    array (
+      'pretty_version' => 'v3.2.0',
+      'version' => '3.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a1f82c6283c8373ea1958b8a27c3d5c98cade351',
     ),
     'lcobucci/clock' => 
     array (

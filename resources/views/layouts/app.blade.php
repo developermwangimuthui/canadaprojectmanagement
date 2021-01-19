@@ -1,83 +1,76 @@
+
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from nsdbytes.com/template/soccer/project/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Jan 2021 09:40:12 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<title>Bantu Khaya Group :: Project Dashboard</title>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css" />
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+<link rel="stylesheet" href="/assets/plugins/charts-c3/c3.min.css" />
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/theme1.css" />
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body class="font-montserrat">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+<div class="page-loader-wrapper">
+<div class="loader">
+</div>
+</div>
+<div id="main_content">
+<div id="header_top" class="header_top">
+<div class="container">
+<div class="hleft">
+<a class="header-brand" href="index-2.html"><i class="fa fa-soccer-ball-o brand-logo"></i></a>
+<div class="dropdown">
+<a href="javascript:void(0)" class="nav-link user_btn"><img class="avatar" src="/assets/images/user.png" alt="" data-toggle="tooltip" data-placement="right" title="User Menu" /></a>
+<a href="page-search.html" class="nav-link icon xs-hide"><i class="fa fa-search"></i></a>
+<a href="app-calendar.html" class="nav-link icon app_inbox xs-hide"><i class="fa fa-calendar"></i></a>
+<a href="app-contact.html" class="nav-link icon xs-hide"><i class="fa fa-id-card-o"></i></a>
+<a href="app-chat.html" class="nav-link icon xs-hide"><i class="fa fa-comments-o"></i></a>
+<a href="app-filemanager.html" class="nav-link icon app_file xs-hide"><i class="fa fa-folder-o"></i></a>
+<a href="javascript:void(0)" class="nav-link icon theme_btn xs-hide"><i class="fa fa-paint-brush" data-toggle="tooltip" data-placement="right" title="Themes"></i></a>
+</div>
+</div>
+<div class="hright">
+<div class="dropdown">
+<a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fa fa-gear fa-spin" data-toggle="tooltip" data-placement="right" title="Settings"></i></a>
+<a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fa  fa-align-left"></i></a>
+</div>
+</div>
+</div>
+</div>
+@include('layouts.sidebar')
 
-                    </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-                            
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+<div class="page">
+@include('layouts.header')
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+@yield('content')
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<div class="section-body">
+@include('layouts.footer')
+</div>
+</div>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-</body>
+
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/assets/bundles/lib.vendor.bundle.js" type="55a807572ea49f8e39c74535-text/javascript"></script>
+<script src="/assets/bundles/apexcharts.bundle.js" type="55a807572ea49f8e39c74535-text/javascript"></script>
+<script src="/assets/bundles/counterup.bundle.js" type="55a807572ea49f8e39c74535-text/javascript"></script>
+<script src="/assets/bundles/knobjs.bundle.js" type="55a807572ea49f8e39c74535-text/javascript"></script>
+<script src="/assets/bundles/c3.bundle.js" type="55a807572ea49f8e39c74535-text/javascript"></script>
+<script src="/assets/js/core.js" type="55a807572ea49f8e39c74535-text/javascript"></script>
+<script src="/project/assets/js/page/project-index.js" type="55a807572ea49f8e39c74535-text/javascript"></script>
+
+
+<script src="/assets/ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="55a807572ea49f8e39c74535-|49" defer=""></script></body>
+
+<!-- Mirrored from nsdbytes.com/template/soccer/project/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Jan 2021 09:40:25 GMT -->
 </html>

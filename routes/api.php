@@ -36,7 +36,7 @@ Route::post('/forgotpassword', [UserAuthController::class, 'forgot_password']);
 Route::post('/tokenconnfrm', [UserAuthController::class, 'token_connfrm']);
 Route::post('/changePassword', [UserAuthController::class, 'changePassword']);
 
-
+// Route::prefix('v1')->group(function () {
 Route::group(['middleware' => ['auth:api']], function () {
     //..................Project ................//
     Route::get('project/index',[ProjectController::class,'index']);
@@ -121,4 +121,5 @@ Route::group(['middleware' => ['auth:api']], function () {
 
 
 });
+// });
 

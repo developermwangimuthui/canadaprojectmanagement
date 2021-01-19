@@ -19,7 +19,13 @@ class CreateProjectsTable extends Migration
             $table->string('reference_number');
             $table->string('project_sponsor');
             $table->string('pursuit_lead');
-            $table->string('date');
+            $table->string('project_manager');
+            $table->string('market_sector');
+            $table->string('type_of_work');
+            $table->string('region');
+            $table->string('expected_start_date');
+            $table->string('expected_end_date');
+            // $table->string('date');
             $table->softDeletes();
             $table->timestamps();
         });
