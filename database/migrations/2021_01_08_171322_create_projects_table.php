@@ -14,7 +14,8 @@ class CreateProjectsTable extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+           $table->uuid('company_id');
             $table->string('name');
             $table->string('reference_number');
             $table->string('project_sponsor');
@@ -25,7 +26,7 @@ class CreateProjectsTable extends Migration
             $table->string('region');
             $table->string('expected_start_date');
             $table->string('expected_end_date');
-            // $table->string('date');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

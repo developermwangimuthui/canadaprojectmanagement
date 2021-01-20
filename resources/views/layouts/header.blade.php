@@ -3,7 +3,16 @@
     <div class="page-header">
     <div class="left">
     <a href="javascript:void(0)" class="icon menu_toggle mr-3"><i class="fa  fa-align-left"></i></a>
+    @if ( Route::currentRouteNamed('project.home'))
     <h1 class="page-title">Dashboard</h1>
+    @elseif( Route::currentRouteNamed('project.details'))
+    <h1 class="page-title">Project Details</h1>
+    @elseif( Route::currentRouteNamed('singlePPS'))
+    <h1 class="page-title">Project Pursuit Summary</h1>
+    @elseif( Route::currentRouteNamed('singlePCE'))
+    <h1 class="page-title">Project  Complexity Evaluation</h1>
+    @endif
+
     </div>
     <div class="right">
     <div class="input-icon xs-hide mr-4">

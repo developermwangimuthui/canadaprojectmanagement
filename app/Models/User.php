@@ -6,6 +6,7 @@ namespace App\Models;
 
 
 
+use App\Traits\UsesUUID;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,7 +23,8 @@ class User extends Authenticatable
 
 {
 
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;    use UsesUUID;
+
 
 
 

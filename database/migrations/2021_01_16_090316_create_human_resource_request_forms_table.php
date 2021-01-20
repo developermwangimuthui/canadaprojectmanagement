@@ -14,8 +14,8 @@ class CreateHumanResourceRequestFormsTable extends Migration
     public function up()
     {
         Schema::create('human_resource_request_forms', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
             $table->json('services')->nullable();
             $table->string('level');
             $table->string('hours');
@@ -55,9 +55,6 @@ class CreateHumanResourceRequestFormsTable extends Migration
             $table->string('accomodation');
             $table->string('near_camp');
             $table->string('other');
-
-
-
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();

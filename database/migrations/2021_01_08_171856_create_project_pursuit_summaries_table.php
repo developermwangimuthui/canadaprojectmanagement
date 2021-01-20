@@ -14,8 +14,8 @@ class CreateProjectPursuitSummariesTable extends Migration
     public function up()
     {
         Schema::create('project_pursuit_summaries', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
             $table->string('bos');
             $table->string('stbc');
             $table->string('pedc');

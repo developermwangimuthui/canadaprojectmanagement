@@ -14,13 +14,15 @@ class CreateProjectInitiationSummarySubcontractorsTable extends Migration
     public function up()
     {
         Schema::create('project_initiation_summary_subcontractors', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
             $table->string('sname');
             $table->string('company');
             $table->string('expertise_responsibility');
             $table->string('contracted_value');
             $table->string('expectations');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+
             $table->softDeletes();
             $table->timestamps();
         });

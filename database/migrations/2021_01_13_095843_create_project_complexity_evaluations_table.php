@@ -14,11 +14,13 @@ class CreateProjectComplexityEvaluationsTable extends Migration
     public function up()
     {
         Schema::create('project_complexity_evaluations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
             $table->string('type');
             $table->string('description');
             $table->integer('complexity_rating');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+
             $table->softDeletes();
             $table->timestamps();
         });

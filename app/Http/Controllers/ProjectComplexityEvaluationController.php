@@ -8,7 +8,7 @@ use App\Http\Resources\ProjectComplexityEvaluationResource;
 use App\Models\ProjectComplexityEvaluation;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+use Illuminate\Support\Str;
 class ProjectComplexityEvaluationController extends Controller
 {
     public function index()
@@ -24,19 +24,28 @@ class ProjectComplexityEvaluationController extends Controller
 
     public function singleProjectPCE($id)
     {
-        $p = ProjectComplexityEvaluation::where('project_id', $id)->get()->all();
-        if (!$p) {
-            return response([
-                'error' => true,
-                'message' => 'PCE does not exist'
-            ], Response::HTTP_OK);
+
+        $pces = ProjectComplexityEvaluation::where('project_id', $id)->get()->all();
+
+        if ($pces) {
+
+        $pce = ProjectComplexityEvaluationResource::collection($pces);
+
+            if (Str::startsWith(request()->path(), 'api'))  {
+
+                return response([
+                    'error' => False,
+                    'message' => 'Success',
+                    'pps' => $pce
+                ], Response::HTTP_OK);
+            }else{
+
+                return view('projectcomplexityevaluation.index',compact('pces','id'));
+
+
+            }
         }
-        $pce = ProjectComplexityEvaluationResource::collection($p);
-        return response([
-            'error' => False,
-            'message' => 'Success',
-            'pps' => $pce
-        ], Response::HTTP_OK);
+
     }
 
 

@@ -14,8 +14,8 @@ class CreateEmergencyResponsePlansTable extends Migration
     public function up()
     {
         Schema::create('emergency_response_plans', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
             $table->string('legal');
             $table->string('jmp');
             $table->string('ptd');
@@ -24,6 +24,7 @@ class CreateEmergencyResponsePlansTable extends Migration
             $table->json('information')->nullable();
             $table->json('nearest_health_center')->nullable();
             $table->json('emercency_phone_numbers')->nullable();
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

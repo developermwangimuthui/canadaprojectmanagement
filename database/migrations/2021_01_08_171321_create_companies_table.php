@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGoNoGoAssesmentsTable extends Migration
+class CreateCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateGoNoGoAssesmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('go_no_go_assesments', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->uuid('id')->primary();
-           $table->uuid('project_id');
-            $table->string('question');
-            $table->integer('rating');
-            $table->string('comments');
-            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->string('name');
+            $table->string('location');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -32,6 +29,6 @@ class CreateGoNoGoAssesmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('go_no_go_assesments');
+        Schema::dropIfExists('companies');
     }
 }

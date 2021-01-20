@@ -14,11 +14,13 @@ class CreateWorkBreakdownStructuresTable extends Migration
     public function up()
     {
         Schema::create('work_breakdown_structures', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
-            $table->unsignedBigInteger('scope_work_description_id');
-            $table->unsignedBigInteger('project_participant_id');
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
+           $table->uuid('scope_work_description_id');
+           $table->uuid('project_participant_id');
             $table->string('hours');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+
             $table->softDeletes();
             $table->timestamps();
         });

@@ -14,8 +14,8 @@ class CreateScheduleHourlyRatesTable extends Migration
     public function up()
     {
         Schema::create('schedule_hourly_rates', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
             $table->string('type');
             $table->string('pesd');
             $table->string('comment');

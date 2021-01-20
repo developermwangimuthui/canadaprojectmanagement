@@ -6,15 +6,17 @@
 <div class="col-md-12">
 <div class="d-flex justify-content-between align-items-center">
 <ul class="nav nav-tabs page-header-tab mt-2">
-    @foreach ($projectspursuitsummarys as $project)
-    @if (\App\Models\ProjectPursuitSummary::where('project_id',$id)->first())
+    {{-- @foreach ($projectspursuitsummarys as $project) --}}
+    {{-- @if (\App\Models\ProjectPursuitSummary::where('project_id',$id)->first())
 
     <a href="{{route('ppsEdit',$project->id)}}" class="btn btn-primary"><i class="fa fa-pencil mr-2"></i>Edit Project Pursuit Summary</a>
-    @else
+    @else --}}
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addtask"><i class="fe fe-plus mr-2"></i>Add Project Pursuit Summary</button>
 
-    @endif
-    @endforeach
+
+   {{-- @endif --}}
+   {{-- {{ $id}} --}}
+    {{-- @endforeach --}}
 </ul>
 
 </div>

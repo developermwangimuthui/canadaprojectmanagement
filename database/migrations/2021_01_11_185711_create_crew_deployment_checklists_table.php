@@ -14,13 +14,15 @@ class CreateCrewDeploymentChecklistsTable extends Migration
     public function up()
     {
         Schema::create('crew_deployment_checklists', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
             $table->string('type');
             $table->string('dsqse');
             $table->string('na');
             $table->string('reviwed_and_discussed');
             $table->string('notes');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+
             $table->softDeletes();
             $table->timestamps();
         });

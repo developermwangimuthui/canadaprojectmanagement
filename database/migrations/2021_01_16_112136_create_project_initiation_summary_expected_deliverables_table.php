@@ -13,13 +13,15 @@ class CreateProjectInitiationSummaryExpectedDeliverablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_initiation_summary_expected_deliverables', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
+        Schema::create('project_i_summary_expected_deliverables', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
             $table->string('type');
             $table->string('fo');
             $table->string('description');
             $table->string('responsibilty');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+
             $table->softDeletes();
             $table->timestamps();
         });

@@ -30,7 +30,7 @@
         </div>
         </div>
         </a>
-<a href="{{route('singlePPS',$project->id)}}">
+<a href="{{route('singlePCE',$project->id)}}">
     <div class="col-xl-4 col-lg-4 col-md-6">
         <div class="card" style="width: 21rem;">
         <div class="card-body text-center ribbon">

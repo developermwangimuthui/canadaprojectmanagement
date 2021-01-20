@@ -57,6 +57,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('projectpursuitsummary/update',[ProjectPursuitSummaryController::class,'ppsUpdate'])->name('ppsUpdate');
     Route::post('projectpursuitsummary/store',[ProjectPursuitSummaryController::class,'store'])->name('pps.store');
 
+    //...................projectcomplexityevaluation.............//
+    Route::get('projectcomplexityevaluation/index',[ProjectComplexityEvaluationController::class,'index']);
+    Route::get('projectcomplexityevaluation/{id}',[ProjectComplexityEvaluationController::class,'singleProjectPCE'])->name('singlePCE');
+    Route::post('projectcomplexityevaluation/store',[ProjectComplexityEvaluationController::class,'store']);
     //...........Go No Go Assesment ......................//
 
     Route::get('gonogoassesment/index',[GoNoGoAssesmentController::class,'index']);
@@ -72,10 +76,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('schedulehourlyrate/index',[ScheduleHourlyRateController::class,'index']);
     Route::post('schedulehourlyrate/store',[ScheduleHourlyRateController::class,'store']);
 
-    //...................projectcomplexityevaluation.............//
-    Route::get('projectcomplexityevaluation/index',[ProjectComplexityEvaluationController::class,'index']);
-    Route::get('projectcomplexityevaluation/{id}',[ProjectComplexityEvaluationController::class,'singleProjectPCE']);
-    Route::post('projectcomplexityevaluation/store',[ProjectComplexityEvaluationController::class,'store']);
 
     //...................projectcomplexityevaluation.............//
     Route::get('projectParticipants/index',[ProjectParticipantsController::class,'index']);

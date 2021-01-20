@@ -14,8 +14,8 @@ class CreateProjectLessonLearntSummariesTable extends Migration
     public function up()
     {
         Schema::create('project_lesson_learnt_summaries', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
             $table->string('project_goals_attained');
             $table->string('what_went_well');
             $table->string('what_went_wrong');

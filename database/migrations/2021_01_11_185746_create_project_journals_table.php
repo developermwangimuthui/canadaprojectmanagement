@@ -14,8 +14,8 @@ class CreateProjectJournalsTable extends Migration
     public function up()
     {
         Schema::create('project_journals', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
+            $table->uuid('id')->primary();
+           $table->uuid('project_id');
             $table->string('date');
             $table->string('temp');
             $table->string('pressure');
@@ -25,6 +25,8 @@ class CreateProjectJournalsTable extends Migration
             $table->string('crewcheckin');
             $table->string('feild_data_review');
             $table->string('comments');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+
             $table->softDeletes();
             $table->timestamps();
         });
