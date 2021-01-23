@@ -20,6 +20,7 @@ use App\Http\Controllers\EmergencyResponsePlanController;
 use App\Http\Controllers\CrewDeploymentChecklistController;
 use App\Http\Controllers\ProjectJournalController;
 use App\Http\Controllers\ProjectInitiationSummaryController;
+use App\Http\Controllers\CompanyController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,6 +39,12 @@ Route::post('/changePassword', [UserAuthController::class, 'changePassword']);
 
 // Route::prefix('v1')->group(function () {
 Route::group(['middleware' => ['auth:api']], function () {
+    //..................Company ................//
+    Route::get('company/index',[CompanyController::class,'index']);
+    Route::get('company/connect{id}',[CompanyController::class,'connect']);
+    Route::get('company/{id}',[CompanyController::class,'singleCompany']);
+    Route::post('company/store',[CompanyController::class,'store']);
+
     //..................Project ................//
     Route::get('project/index',[ProjectController::class,'index']);
     Route::get('project/{id}',[ProjectController::class,'singleProject']);

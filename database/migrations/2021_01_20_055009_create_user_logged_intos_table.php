@@ -14,7 +14,11 @@ class CreateUserLoggedIntosTable extends Migration
     public function up()
     {
         Schema::create('user_logged_intos', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->unsignedBigInteger('user_id');
+            $table->uuid('company_id');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

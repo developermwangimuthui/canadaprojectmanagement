@@ -14,7 +14,12 @@ class CreateUserCompaniesTable extends Migration
     public function up()
     {
         Schema::create('user_companies', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+
+            $table->uuid('company_id');
+            $table->unsignedBigInteger('user_id');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
