@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProjectRequest;
 use App\Http\Resources\ProjectResource;
 use App\Models\Project;
+use App\Models\UserLoggedInto;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\Auth ;
 
 class ProjectController extends Controller
 {
     public function index()
     {
-        $allProjects = Project::all();
+
+        $company_id = UserLoggedInto::where('user_id',Auth::user()->id)->pluck('company_id')->first();
+        $allProjects = Project::where('company_id',$company_id)->get();
         $projects = ProjectResource::collection($allProjects);
         return response([
             'error' => False,
@@ -55,8 +58,11 @@ class ProjectController extends Controller
 
     public function store(ProjectRequest $request)
     {
+
+        $company_id = UserLoggedInto::where('user_id',Auth::user()->id)->pluck('company_id')->first();
         $project = new Project();
         $project->name = $request->input('name');
+        $project->company_id = $company_id;
         $project->reference_number = $request->input('reference_number');
         $project->project_sponsor = $request->input('project_sponsor');
         $project->pursuit_lead = $request->input('pursuit_lead');
