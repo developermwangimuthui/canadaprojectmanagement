@@ -41,7 +41,7 @@ Route::post('/changePassword', [UserAuthController::class, 'changePassword']);
 Route::group(['middleware' => ['auth:api']], function () {
     //..................Company ................//
     Route::get('company/index',[CompanyController::class,'index']);
-    Route::get('company/connect{id}',[CompanyController::class,'connect']);
+    Route::get('company/connect/{id}',[CompanyController::class,'connect']);
     Route::get('company/{id}',[CompanyController::class,'singleCompany']);
     Route::post('company/store',[CompanyController::class,'store']);
 

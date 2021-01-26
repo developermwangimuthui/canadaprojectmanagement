@@ -143,15 +143,13 @@ class CompanyController extends Controller
         $user_company->save();
 
 
-        $count = UserLoggedInto::where('user_id', $user_id)->count();
-        if ($count == 0) {
+       
+        $companies = DB::table('user_companies')->
+        join('companies', 'companies.id', '=', 'user_companies.company_id')
+            ->where('user_companies.user_id', $user_id)
+            ->get();
 
-            $login = new UserloggedInto;
-            $login->user_id = $user_id;
-            $login->company_id = $company_id;
-            $login->save();
-        }
-
+            $company = CompanyResource::collection($companies);
         if (Str::startsWith(request()->path(), 'api')) {
             return response([
                 'error' => False,
