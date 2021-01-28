@@ -25,10 +25,21 @@ class ProjectComplexityEvaluationRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id' => 'required|integer',
-            'type' => 'required|string',
-            'description' => 'required|string',
-            'complexity_rating' => 'required|integer',
+            'project_id' => 'required',
+            'pop' => 'required',
+            'cos' => 'required',
+            'rfps' => 'required',
+            'es' => 'required',
+            'sm' => 'required',
+            'nod' => 'required',
+            'nos' => 'required',
+            'ss' => 'required',
+            'pd' => 'required',
+            'wwgtc' => 'required',
+            'ei' => 'required',
+            'pfi' => 'required',
+            'ecr' => 'required',
+            // 'additional_skills' => 'required',
         ];
     }
 }

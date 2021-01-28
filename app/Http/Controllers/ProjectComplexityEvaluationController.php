@@ -54,8 +54,20 @@ class ProjectComplexityEvaluationController extends Controller
         $projectComplexityEvaluation = new ProjectComplexityEvaluation();
         $projectComplexityEvaluation ->project_id  = $request->input('project_id');
         $projectComplexityEvaluation ->type = $request->input('type');
-        $projectComplexityEvaluation ->description = $request->input('description');
-        $projectComplexityEvaluation ->complexity_rating = $request->input('complexity_rating');
+        $projectComplexityEvaluation ->pop = $request->input('pop');
+        $projectComplexityEvaluation ->cos = $request->input('cos');
+        $projectComplexityEvaluation ->rfps = $request->input('rfps');
+        $projectComplexityEvaluation ->es = $request->input('es');
+        $projectComplexityEvaluation ->sm = $request->input('sm');
+        $projectComplexityEvaluation ->nod = $request->input('nod');
+        $projectComplexityEvaluation ->nos = $request->input('nos');
+        $projectComplexityEvaluation ->ss = $request->input('ss');
+        $projectComplexityEvaluation ->pd = $request->input('pd');
+        $projectComplexityEvaluation ->wwgtc = $request->input('wwgtc');
+        $projectComplexityEvaluation ->ei = $request->input('ei');
+        $projectComplexityEvaluation ->pfi = $request->input('pfi');
+        $projectComplexityEvaluation ->ecr = $request->input('ecr');
+        $projectComplexityEvaluation ->additional_skills = json_encode($request->input('additional_skills'));
         $projectComplexityEvaluation ->save();
         $id = $projectComplexityEvaluation->id;
 

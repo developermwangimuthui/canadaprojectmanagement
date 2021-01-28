@@ -17,8 +17,20 @@ class CreateProjectComplexityEvaluationsTable extends Migration
             $table->uuid('id')->primary();
            $table->uuid('project_id');
             $table->string('type');
-            $table->string('description');
-            $table->integer('complexity_rating');
+            $table->string('pop');
+            $table->string('cos');
+            $table->string('rfps');
+            $table->string('es');
+            $table->string('sm');
+            $table->string('nod');
+            $table->string('nos');
+            $table->string('ss');
+            $table->string('pd');
+            $table->string('wwgtc');
+            $table->string('ei');
+            $table->string('pfi');
+            $table->string('ecr');
+            $table->json('additional_skills')->nullable();
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
 
             $table->softDeletes();
