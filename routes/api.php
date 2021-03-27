@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth:api']], function () {
 
     Route::get('gonogoassesment/index',[GoNoGoAssesmentController::class,'index']);
     Route::get('gonogoassesment/{id}',[GoNoGoAssesmentController::class,'singleGonogo']);
+    Route::get('gonogoassesment/results/{id}',[GoNoGoAssesmentController::class,'singleGonogoResult']);
     Route::post('gonogoassesment/store',[GoNoGoAssesmentController::class,'store']);
 
     //...................projectlessonlearntsummary.............//
@@ -75,6 +76,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     //...................projectcomplexityevaluation.............//
     Route::get('projectcomplexityevaluation/index',[ProjectComplexityEvaluationController::class,'index']);
     Route::get('projectcomplexityevaluation/{id}',[ProjectComplexityEvaluationController::class,'singleProjectPCE']);
+    Route::get('projectcomplexityevaluation/results/{id}',[ProjectComplexityEvaluationController::class,'singleProjectPCEResults']);
     Route::post('projectcomplexityevaluation/store',[ProjectComplexityEvaluationController::class,'store']);
 
     //...................projectcomplexityevaluation.............//

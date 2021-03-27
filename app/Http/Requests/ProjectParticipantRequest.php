@@ -25,7 +25,7 @@ class ProjectParticipantRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id' => 'required|integer',
+            'project_id' => 'required|string',
             'position' => 'required|string',
             'comment' => 'required|string',
             'rate' => 'required|string',

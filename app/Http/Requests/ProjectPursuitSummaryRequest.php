@@ -25,7 +25,7 @@ class ProjectPursuitSummaryRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id' => 'required|integer',
+            'project_id' => 'required|string',
             'bos' => 'required|string',
             'stbc' => 'required|string',
             'pedc' => 'required|string',

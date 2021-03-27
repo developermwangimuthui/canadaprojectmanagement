@@ -15,22 +15,24 @@ class ProjectComplexityEvaluationResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "id"=>$this->id,
-            "project_id"=>$this->project_id,
-            "pop"=>$this->pop,
-            "cos"=>$this->cos,
-            "rfps"=>$this->rfps,
-            "es"=>$this->es,
-            "sm"=>$this->sm,
-            "nod"=>$this->nod,
-            "nos"=>$this->nos,
-            "ss"=>$this->ss,
-            "pd"=>$this->pd,
-            "wwgtc"=>$this->wwgtc,
-            "ei"=>$this->ei,
-            "pfi"=>$this->pfi,
-            "ecr"=>$this->ecr,
-            "additional_skills"=>json_decode($this->additional_skills)
+            "id" => $this->id,
+            "project_id" => $this->project_id,
+            "pop" => $this->pop,
+            "cos" => $this->cos,
+            "rfps" => $this->rfps,
+            "es" => $this->es,
+            "sm" => $this->sm,
+            "nod" => $this->nod,
+            "nos" => $this->nos,
+            "ss" => $this->ss,
+            "pd" => $this->pd,
+            "wwgtc" => $this->wwgtc,
+            "ei" => $this->ei,
+            "pfi" => $this->pfi,
+            "ecr" => $this->ecr,
+            "additional_skills" => json_decode($this->additional_skills),
+            "other" => $this->other,
+            'updated_at' => $this->updated_at->format('d M, yy')
         ];
     }
 }

@@ -25,10 +25,25 @@ class GoNoGoAssesmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id' => 'required|integer',
-            'question' => 'required|string',
-            'rating' => 'required|integer',
-            'comments' => 'required|string',
+            'project_id' => 'required|string',
+            'er' => 'required|integer',
+            'dr' => 'required|integer',
+            'ii' => 'required|integer',
+            'scope' => 'required|integer',
+            'pm' => 'required|integer',
+            'se' => 'required|integer',
+            'tr' => 'required|integer',
+            'he' => 'required|integer',
+            'ci' => 'required|integer',
+            'bic' => 'required|integer',
+            'aoi' => 'required|integer',
+            'ra' => 'required|integer',
+            'cl' => 'required|integer',
+            'sp' => 'required|integer',
+            'cv' => 'required|integer',
+            'rgpp' => 'required|integer',
+            'pr' => 'required|integer',
+            'lr' => 'required|integer',
         ];
     }
 }

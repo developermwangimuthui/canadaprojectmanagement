@@ -20,13 +20,13 @@ class ProjectPursuitSummaryController extends Controller
         return response([
             'error' => False,
             'message' => 'Success',
-            'projectspursuitsummary' => $projectspursuitsummary
+            'pps' => $projectspursuitsummary
         ], Response::HTTP_OK);
     }
 
     public function singlePPS($id)
     {
-        $projectspursuitsummarys = ProjectPursuitSummary::where('project_id', $id)->get();
+        $projectspursuitsummarys = ProjectPursuitSummary::where('project_id', $id)->first();
         if (!$projectspursuitsummarys) {
 
             return response([
@@ -36,7 +36,7 @@ class ProjectPursuitSummaryController extends Controller
         }else {
 
             if (Str::startsWith(request()->path(), 'api'))  {
-
+                // $projectspursuitsummarys = ProjectPursuitSummaryResource::collection($projectspursuitsummarys);
                 return response([
                     'error' => False,
                     'message' => 'Success',
@@ -142,7 +142,7 @@ class ProjectPursuitSummaryController extends Controller
         $project_id = $request->input('project_id');
 
         $pps = ProjectPursuitSummary::where('id',$id)->first();
-        //$projectspursuitsummary = ProjectPursuitSummaryResource::collection($allprojectspursuitsummary);
+        // $projectspursuitsummary = ProjectPursuitSummaryResource::collection($pps);
 
         if (Str::startsWith(request()->path(), 'api'))  {
 

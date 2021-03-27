@@ -143,7 +143,7 @@ class CompanyController extends Controller
         $user_company->save();
 
 
-       
+
         $companies = DB::table('user_companies')->
         join('companies', 'companies.id', '=', 'user_companies.company_id')
             ->where('user_companies.user_id', $user_id)

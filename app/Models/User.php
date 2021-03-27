@@ -1,11 +1,5 @@
 <?php
-
-
-
 namespace App\Models;
-
-
-
 //use App\Traits\UsesUUID;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 

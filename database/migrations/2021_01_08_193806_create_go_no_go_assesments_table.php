@@ -16,9 +16,24 @@ class CreateGoNoGoAssesmentsTable extends Migration
         Schema::create('go_no_go_assesments', function (Blueprint $table) {
             $table->uuid('id')->primary();
            $table->uuid('project_id');
-            $table->string('question');
-            $table->integer('rating');
-            $table->string('comments');
+            $table->integer('er');
+            $table->integer('dr');
+            $table->integer('ii');
+            $table->integer('scope');
+            $table->integer('pm');
+            $table->integer('se');
+            $table->integer('tr');
+            $table->integer('he');
+            $table->integer('ci');
+            $table->integer('bic');
+            $table->integer('aoi');
+            $table->integer('ra');
+            $table->integer('cl');
+            $table->integer('sp');
+            $table->integer('cv');
+            $table->integer('rgpp');
+            $table->integer('pr');
+            $table->integer('lr');
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
